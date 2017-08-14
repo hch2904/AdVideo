@@ -1,0 +1,57 @@
+<h2 class="text-center">Register User</h2>
+<div class="form-container">
+	<form [formGroup] ="registerUserForm" (ngSubmit) = "submitregisterUserForm(registerUserForm.value)">
+		<div class="input-wrap">
+			<md-input-container>
+		        <input mdInput placeholder="Enter Your Username" formControlName = "usernameForm">
+		        <md-error >
+		          Please enter a valid email address
+		        </md-error>
+		        <md-error >
+		          Email is <strong>required</strong>
+		        </md-error>
+		    </md-input-container>
+	    </div>
+	    <div class="input-wrap">
+		    <md-input-container>
+		        <input mdInput type="password" placeholder="Enter Your Password" formControlName = "password" >
+		        <md-error >
+		          Please enter a password
+		        </md-error>
+		        <md-error >
+		          Password is <strong>required</strong>
+		        </md-error>
+		    </md-input-container>
+	    </div>
+	    <div  class="input-wrap">
+		    <md-input-container>
+		        <input mdInput type="password" placeholder="Confirm Your Password" formControlName = "confirmPass">
+		        <md-error>
+		          Please enter a valid password
+		        </md-error>
+		        <md-error >
+		          Password Does Not Match
+		        </md-error>
+		    </md-input-container>
+	    </div>
+	    <div  class="input-wrap">
+		    <md-input-container>
+		        <input mdInput placeholder="Enter Your First Name" formControlName = "firstname">
+		        <md-error >
+		         	First Name is Required
+		        </md-error>
+		    </md-input-container>
+	    </div>
+	    <div class="input-wrap">
+		    <md-input-container>
+		        <input mdInput placeholder="Enter Your Last Name" formControlName = "lastname">
+		        <md-error >
+		          Last Name is required
+		        </md-error>
+		    </md-input-container>
+	    </div>
+	    <div class="input-wrap">
+	    	<button type="submit" name="button" md-raised-button [disabled]="!registerUserForm.valid">Submit</button>
+	    </div>
+	</form>
+</div>

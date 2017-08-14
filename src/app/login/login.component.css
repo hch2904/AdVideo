@@ -1,0 +1,128 @@
+.wrapper {
+  width: 1440px;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  //background: #FFF;
+  //background-image: url("../../assets/pattern.png");
+}
+.wrapper .row{
+  width: 100%;
+  height: 100%;
+}
+.wrapper .col{
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+#banner-left{
+    height: 100%;
+    /*border: 4px solid #000;*/
+}
+#banner-left i{
+    color:white;
+}
+.left-content{
+    margin: 25% 0 0 5%;
+}
+.login-heading{
+    font-family: 'Raleway';
+    color: white;
+    font-size: 3.5em;
+    text-align: left;
+    font-weight: 900;
+    margin-bottom: 0;
+    animation: slideFromUP 1s cubic-bezier(0.01, 0.59, 0.9, 1.01);
+}
+#login-sub-heading1{
+    font-family: 'Raleway';
+    font-size: 2.5em;
+    text-align: left;
+    color: #e91e63;
+    animation: subhead 500ms ease-in-out;
+    display: block;
+}
+#login-sub-heading2{
+    font-family: 'Raleway';
+    font-size: 2.5em;
+    text-align: left;
+    font-weight: 700;
+    color: #e91e63;
+    animation: subhead 1s ease-in-out;
+    display: block;
+    
+}
+#login-sub-heading3{
+    font-family: 'Raleway';
+    font-size: 2.5em;
+    text-align: left;
+    color: #e91e63;
+    animation: subhead 1500ms ease-in-out;
+    display: block;
+}
+.panel-heading{
+    font-size: 1.8em;
+    font-family: 'Raleway';
+    font-weight: 600;
+    color: #e91e63;
+    /*color:#34aaff;*/
+}
+
+.login-panel{
+    margin: 20%;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: 10px 10px 8px 4px rgba(0, 0, 0, 0.2), 5px 5px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12)!important;
+}
+.mat-card{
+    background: rgba(255,255,255,0.4)!important;
+    border-radius: 5%;
+}
+
+.card-header,.card-footer {
+    background-color: transparent!important;
+    border: none!important;
+}
+.bg-video{
+    position: fixed;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    min-width: 100vw;
+    min-height: 100vh;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    overflow: hidden;
+    /*object-fit: cover;*/
+}
+/deep/ .mat-input-placeholder {
+    color: #fff;
+    font-size: 1em;
+}
+/deep/ .mat-input-ripple.mat-focused {
+    background-color: #fff;
+}
+
+@keyframes subhead{
+    0%{
+        transform: translate(-100%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translate(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFromUP{
+    0%{
+        transform: translateY(-200%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}

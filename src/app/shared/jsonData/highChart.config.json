@@ -1,0 +1,35 @@
+{
+            chart:{zoomType:'xy'},
+            turboThreshold: 2000,
+            series: [{
+                name: "Bit Rate",
+                data: [22,-3,-5,-8,-13, 71.5, 222,106.4,32,145,122,33],
+                allowPointSelect: true,
+                dashStyle: 'longdash',
+                zones: [{
+                    value: 0,
+                    color: '#f7a35c'
+                  }, {
+                    value: 200,
+                    color: '#7cb5ec'
+                  }, {
+                    color: '#90ed7d'
+                  }
+               ]
+            },{
+                name: "FPS",
+                dashStyle: 'shortdot',
+                data: [],
+                allowPointSelect: true
+            },
+            
+            {
+                name: "Length",
+                data: [129,343,234,23,123,43,122,54,23,123,43,122],
+                allowPointSelect: true,
+                
+            }]
+        };
+      
+    }
+}

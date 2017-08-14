@@ -1,0 +1,60 @@
+<div [@routerTransition]>
+    <h2 class="text-muted" align="margin-left">Begin Test Run for Ad Monitoring</h2>
+    <div class="overall" align="center">
+    <div class="row" align="left" style="margin-top: 60px;margin-left: 80px;">
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group">
+        <label  for="name">URL</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="model.name" name="name"
+               #name="ngModel">
+        <div [hidden]="name.valid || name.pristine"
+             class="alert alert-danger">
+          URL is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="power">Platform</label>
+        <select class="form-control" id="power"
+                required
+                [(ngModel)]="model.power" name="power"
+                #power="ngModel">
+          <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+        </select>
+        <div [hidden]="power.valid || power.pristine" class="alert alert-danger">
+          ENVIRONMENT is required
+        </div>
+      </div>
+       <div class="form-group">
+        <label for="device">Device</label>
+        <select class="form-control" id="device"
+                required
+                [(ngModel)]="model.device" name="device"
+                #device="ngModel">
+          <option *ngFor="let dev of devices" [value]="dev">{{dev}}</option>
+        </select>
+        <div [hidden]="device.valid || device.pristine" class="alert alert-danger">
+          DEVICE is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="browser">Browser</label>
+        <select class="form-control" id="browser"
+                required
+                [(ngModel)]="model.browser" name="browser"
+                #browser="ngModel">
+          <option *ngFor="let bro of browsers" [value]="bro">{{bro}}</option>
+        </select>
+        <div [hidden]="browser.valid || browser.pristine" class="alert alert-danger">
+          BROWSER is required
+        </div>
+      </div>
+
+      <a [routerLink]="['/charts']" [routerLinkActive]="['router-link-active']"     button class="btn btn-success" >View graph</a>
+      <button type="button" class="btn btn-success" [disabled]="!heroForm.form.valid" (click)="isValid=true">MONITOR AD</button>
+      <button type="button" class="btn btn-default" (click)="newHero();isValid=false; heroForm.reset()">RESET</button>
+    </form>
+    </div>
+</div>
+</div>

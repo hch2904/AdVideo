@@ -1,0 +1,81 @@
+<div [@routerTransition]>
+
+  <app-page-header [heading]="'Register Device'" [icon]="'fa fa-registered'"></app-page-header>
+
+<div>
+     <form role="form" style="margin-left: 80px;width: 350px;" (ngSubmit)="onSubmit()" #heroForm="ngForm">
+         
+
+      <div class="form-group">
+        <label for="platform">Platform</label>
+        <select class="form-control" id="platform"
+                required
+                [(ngModel)]="model.platform" name="platform"
+                #platform="ngModel">
+          <option *ngFor="let plat of platforms" [value]="plat">{{plat}}</option>
+        </select>
+        <div [hidden]="platform.valid || platform.pristine" class="alert alert-danger">
+          PLATFORM is required
+        </div>
+      </div>
+
+       <div class="form-group">
+        <label for="device">Device</label>
+        <select class="form-control" id="device"
+                required
+                [(ngModel)]="model.device" name="device"
+                #device="ngModel">
+          <option *ngFor="let dev of devices" [value]="dev">{{dev}}</option>
+        </select>
+        <div [hidden]="device.valid || device.pristine" class="alert alert-danger">
+          DEVICE is required
+        </div>
+      </div>
+
+
+
+
+      <div class="form-group">
+        <label for="browser">Browser</label>
+        <select class="form-control" id="browser"
+                required
+                [(ngModel)]="model.browser" name="browser"
+                #browser="ngModel">
+          <option *ngFor="let bro of browsers" [value]="bro">{{bro}}</option>
+        </select>
+        <div [hidden]="browser.valid || browser.pristine" class="alert alert-danger">
+          BROWSER is required
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <label  for="ip">IP ADDRESS</label>
+        <input type="text" class="form-control" id="ip" placeholder="Enter IP"
+               required
+               [(ngModel)]="model.ip" name="ip"
+               #ip="ngModel">
+        <div [hidden]="ip.valid || ip.pristine"
+             class="alert alert-danger">
+          IP is required
+        </div>
+      </div>
+
+
+
+         <div class="form-group">
+             <label  for="udid">UDID(for IOS devices)</label>
+           <input type="text" class="form-control" id="udid" placeholder="Enter UDID"
+               
+               [(ngModel)]="model.udid" name="udid"
+               #udid="ngModel">
+           <div [hidden]="udid.valid || udid.pristine"
+             class="alert alert-danger">
+          UDID is required
+           </div>
+          </div>
+              <button type="submit" class="btn btn-primary" [disabled]="!heroForm.form.valid">Submit</button>
+              <button type="button" class="btn btn-default" (click)="newDevice(); heroForm.reset()">Clear</button>
+            </form>
+     </div>
+</div>

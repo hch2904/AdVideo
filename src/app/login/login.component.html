@@ -1,0 +1,50 @@
+<div class="vid-container">
+  <video class="bg-video" poster="../../assets/Snapshots/snapshot.jpg" autoplay="true" loop>
+    <source src="../../assets/MP4/video.mp4" type="video/mp4">
+    <source src="../../assets/WEBM/video.webm" type="video/mp4">
+  </video>
+</div>
+<div class="wrapper">
+  <div class="row">
+    <div class="col" id="banner-left">
+      <div class="left-content">
+        <h2 class="login-heading">Monitoring <span style="color: #e91e63;">&amp;</span> Analysing</h2>
+        <div>
+            <span id="login-sub-heading1"><i class="fa fa-video-camera" aria-hidden="true"></i> AD</span><br>
+            <span id="login-sub-heading2"><i class="fa fa-film" aria-hidden="true"></i> Video </span> <br>
+            <span id="login-sub-heading3"> <i class="fa fa-line-chart" aria-hidden="true"></i> Data </span><br>  
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="login-panel">
+        <form [formGroup] ="loginForm" (ngSubmit) = "submitLoginForm(loginForm.value)">
+          <md-card class="login-card">
+            <md-card-header class="card-header">
+              <h3 class="text-center panel-heading">Login To Your Account</h3>
+            </md-card-header>
+            <md-card-content>
+              <md-input-container>
+                <input mdInput placeholder="Enter Your Username" formControlName = "emailFormControl">
+                <md-error >
+                  Please enter a valid email address
+                </md-error>
+                <md-error >
+                  Email is <strong>required</strong>
+                </md-error>
+              </md-input-container>
+              <br>
+              <md-input-container>
+                <input mdInput type="password" placeholder="Enter Your Password" formControlName="password">
+              </md-input-container>
+            </md-card-content>
+            <md-card-actions class="card-footer">
+              <button type="submit" name="button" md-raised-button [disabled]="!loginForm.valid">Submit</button>
+              <!-- <input md-raised-button type="submit" value="Submit"> -->
+            </md-card-actions>
+          </md-card>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
